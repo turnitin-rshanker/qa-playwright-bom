@@ -1,0 +1,14 @@
+name: Verify and publish Maven modules
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Verify and publish Maven modules to Artifactory
+    uses: turnitin/github-actions/.github/workflows/maven-deploy.yaml@main
+    with:
+      use_java_version: '21'
+    secrets: inherit
